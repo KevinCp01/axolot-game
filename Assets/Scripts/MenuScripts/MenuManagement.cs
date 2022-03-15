@@ -8,7 +8,7 @@ public class MenuManagement : MonoBehaviour
     // Start is called before the first frame update
     public void BotonStart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ExampleScene");
     }
 
     // Update is called once per frame
