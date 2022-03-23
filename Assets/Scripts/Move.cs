@@ -21,13 +21,17 @@ public class Move : MonoBehaviour
     public float dashDistance = 5f;
     bool isDashing;
     float doubleTapTime;
-    KeyCode lastKeyCode; 
+    KeyCode lastKeyCode;
+
+    [Header("Animation")]
+    private Animator animator;
 
  
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator= GetComponent<Animator>();
     }
  
     // Update is called once per frame
@@ -38,13 +42,16 @@ public class Move : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
             
             moveInput = Input.GetAxisRaw("Horizontal");
+            
+
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
     }
  
     private void Update()
     {
-        if(isGrounded)
+        moveInput = Input.GetAxisRaw("Horizontal");
+        if (isGrounded)
         {
             tempPlayerJumps = playerJumps;
         }
@@ -82,7 +89,7 @@ public class Move : MonoBehaviour
 
             lastKeyCode = KeyCode.RightArrow;
         }
-
+        animator.SetFloat("Horizontal", Mathf.Abs(moveInput));
         CheckGrounded();
     }
 
