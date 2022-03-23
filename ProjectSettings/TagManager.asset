@@ -41,6 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 1848341913
     locked: 0
+  - name: Pilars
+    uniqueID: 2632339455
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
