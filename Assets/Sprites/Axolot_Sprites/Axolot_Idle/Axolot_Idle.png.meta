@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 5ee71139454be0f45b248c3376d12c87
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5778650724692995251
+    second: Axolot_Idle_0
+  - first:
+      213: -7296429057248134939
+    second: Axolot_Idle_1
+  - first:
+      213: 593985128107011989
+    second: Axolot_Idle_2
+  - first:
+      213: -560921444642670013
+    second: Axolot_Idle_3
+  - first:
+      213: 483868954309648485
+    second: Axolot_Idle_4
+  - first:
+      213: -5194299391632360271
+    second: Axolot_Idle_5
+  - first:
+      213: 5914142354986606223
+    second: Axolot_Idle_6
+  - first:
+      213: -4491695166086725116
+    second: Axolot_Idle_7
+  - first:
+      213: 3119372229098013015
+    second: Axolot_Idle_8
+  - first:
+      213: 8496746558344252906
+    second: Axolot_Idle_9
+  - first:
+      213: 2531193327728563121
+    second: Axolot_Idle_10
+  - first:
+      213: 4019435840001838842
+    second: Axolot_Idle_11
+  - first:
+      213: 8292062581066391457
+    second: Axolot_Idle_12
+  - first:
+      213: 7099809300743678472
+    second: Axolot_Idle_13
+  - first:
+      213: -765267373544366425
+    second: Axolot_Idle_14
+  - first:
+      213: 1840712589407417442
+    second: Axolot_Idle_15
+  - first:
+      213: -279453209546657123
+    second: Axolot_Idle_16
+  - first:
+      213: -4235378821336398321
+    second: Axolot_Idle_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +86,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,12 +95,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,7 +122,55 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +179,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Axolot_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 2623
+        width: 517
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43de9158cb1ecfa0800000000000000
+      internalID: -5778650724692995251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 2623
+        width: 501
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8f2e93e60edba90800000000000000
+      internalID: -7296429057248134939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 2623
+        width: 518
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59feea2b3524e3800800000000000000
+      internalID: 593985128107011989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 2619
+        width: 522
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34abc210be43738f0800000000000000
+      internalID: -560921444642670013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1984
+        width: 518
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5606773104c07b600800000000000000
+      internalID: 483868954309648485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1984
+        width: 501
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcb9b059342ae7b0800000000000000
+      internalID: -5194299391632360271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 1984
+        width: 517
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e911c2321431250800000000000000
+      internalID: 5914142354986606223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 1984
+        width: 501
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402cf026b0b4aa1c0800000000000000
+      internalID: -4491695166086725116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1344
+        width: 518
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7510b95e38c3a4b20800000000000000
+      internalID: 3119372229098013015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1339
+        width: 522
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedc1a42af18ae570800000000000000
+      internalID: 8496746558344252906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1344
+        width: 518
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b39915bbea902320800000000000000
+      internalID: 2531193327728563121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 1344
+        width: 501
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe88c0c997e7c730800000000000000
+      internalID: 4019435840001838842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 703
+        width: 517
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af55c7fbf2531370800000000000000
+      internalID: 8292062581066391457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 703
+        width: 501
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a67df41f6978260800000000000000
+      internalID: 7099809300743678472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 703
+        width: 518
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae11b9d0693165f0800000000000000
+      internalID: -765267373544366425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 698
+        width: 522
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264f739f8568b8910800000000000000
+      internalID: 1840712589407417442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 518
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92f0a959ce2f1cf0800000000000000
+      internalID: -279453209546657123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axolot_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 64
+        width: 501
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f060809e669e835c0800000000000000
+      internalID: -4235378821336398321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
