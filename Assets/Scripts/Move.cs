@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
  
     public int playerJumps;
     private int tempPlayerJumps;
+    float jumpCoolDown;
 
     public float dashDistance = 5f;
     bool isDashing;
@@ -54,9 +55,9 @@ public class Move : MonoBehaviour
             tempPlayerJumps--;
         }
 
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(doubleTapTime > Time.time && lastKeyCode == KeyCode.A)
+            if(doubleTapTime > Time.time && lastKeyCode == KeyCode.LeftArrow)
             {
                 StartCoroutine(Dash(-1f));
             }
@@ -65,7 +66,41 @@ public class Move : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            lastKeyCode = KeyCode.A;
+            lastKeyCode = KeyCode.LeftArrow;
+        }
+
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if(doubleTapTime > Time.time && lastKeyCode == KeyCode.RightArrow)
+            {
+                StartCoroutine(Dash(1f));
+            }
+            else 
+            {
+                doubleTapTime = Time.time + 0.5f;
+            }
+
+            lastKeyCode = KeyCode.RightArrow;
+        }
+
+        CheckGrounded();
+    }
+
+    void CheckGrounded()
+    {
+        if(Physics2D.OverlapCircle(groundCheck.position, 0.5f, ground))
+        {
+            isGrounded = true;
+            tempPlayerJumps = 0;
+            jumpCoolDown = Time.time + 0.2f;
+        }
+        else if(Time.time < jumpCoolDown)
+        {
+            isGrounded = true;
+        }
+        else 
+        {
+            isGrounded = false;
         }
     }
 
