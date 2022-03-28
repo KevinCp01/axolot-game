@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    Rigidbody2D rb;
-    private float moveInput; //get horizontal movement
-    public float moveSpeed;
-    public float jumpForce;
- 
-    public Transform groundCheck; //object to check whether player is touching the ground
-    public LayerMask ground;
-    public float groundCheckRadius;
-    private bool isGrounded;
- 
-    public int playerJumps;
-    private int tempPlayerJumps;
+    public float speed = 10f;
+    public float jumpForce = 15f;
+    public int extraJump = 1;
+
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] Transform groundCheck;
+
+    int jumpCount = 0;
+    bool isGrounded;
     float jumpCoolDown;
 
-    public float dashDistance = 5f;
+    float moveInput;
+    private Vector2 movement;
+    private bool facingRight = true;
+
+    public float dashDistance = 15f;
     bool isDashing;
     float doubleTapTime;
     KeyCode lastKeyCode;
@@ -26,49 +28,37 @@ public class Move : MonoBehaviour
     [Header("Animation")]
     private Animator animator;
 
- 
-    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator= GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
- 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(!isDashing)
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
-            
-            moveInput = Input.GetAxisRaw("Horizontal");
-            
-
-            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
-        }
-    }
- 
     private void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        if (isGrounded)
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Horizontal", Mathf.Abs(moveInput));
+        movement = new Vector2(moveInput, 0f);
+
+        if (moveInput < 0f && facingRight == true)
         {
-            tempPlayerJumps = playerJumps;
+            Flip();
         }
- 
-        if(Input.GetKeyDown(KeyCode.Space) && tempPlayerJumps > 0)
+        else if (moveInput > 0f && facingRight == false)
         {
-            rb.velocity = Vector2.up * jumpForce;
-            tempPlayerJumps--;
+            Flip();
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetButtonDown("Jump"))
         {
-            if(doubleTapTime > Time.time && lastKeyCode == KeyCode.LeftArrow)
+            Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.LeftArrow)
             {
                 StartCoroutine(Dash(-1f));
             }
-            else 
+            else
             {
                 doubleTapTime = Time.time + 0.5f;
             }
@@ -76,50 +66,75 @@ public class Move : MonoBehaviour
             lastKeyCode = KeyCode.LeftArrow;
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(doubleTapTime > Time.time && lastKeyCode == KeyCode.RightArrow)
+            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.RightArrow)
             {
                 StartCoroutine(Dash(1f));
             }
-            else 
+            else
             {
                 doubleTapTime = Time.time + 0.5f;
             }
 
             lastKeyCode = KeyCode.RightArrow;
         }
-        animator.SetFloat("Horizontal", Mathf.Abs(moveInput));
+
         CheckGrounded();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isDashing)
+        {
+            float horizontalVelocity = movement.normalized.x * speed;
+            rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        float localScaleX = transform.localScale.x;
+        localScaleX = localScaleX * -1f;
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+    void Jump()
+    {
+        if (isGrounded || jumpCount < extraJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpCount++;
+        }
     }
 
     void CheckGrounded()
     {
-        if(Physics2D.OverlapCircle(groundCheck.position, 0.5f, ground))
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer))
         {
             isGrounded = true;
-            tempPlayerJumps = 0;
+            jumpCount = 0;
             jumpCoolDown = Time.time + 0.2f;
         }
-        else if(Time.time < jumpCoolDown)
+        else if (Time.time < jumpCoolDown)
         {
             isGrounded = true;
         }
-        else 
+        else
         {
             isGrounded = false;
         }
     }
 
-    IEnumerator Dash (float direction)
+    IEnumerator Dash(float direction)
     {
         isDashing = true;
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(new Vector2(dashDistance * direction, 0f), ForceMode2D.Impulse);
-        float gravity = rb.gravityScale;
         rb.gravityScale = 0;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
         isDashing = false;
-        rb.gravityScale = gravity;
+        rb.gravityScale = 5f;
     }
 }
