@@ -35,7 +35,12 @@ public class Move : MonoBehaviour
     private void Update()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Horizontal", Mathf.Abs(moveInput));
+        if(isGrounded == true && isDashing == false)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetFloat("Horizontal", Mathf.Abs(moveInput));
+        }
+       
         movement = new Vector2(moveInput, 0f);
 
         if (moveInput < 0f && facingRight == true)
@@ -49,8 +54,10 @@ public class Move : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+        
             Jump();
         }
+        
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -106,6 +113,7 @@ public class Move : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount++;
+           
         }
     }
 
@@ -114,8 +122,10 @@ public class Move : MonoBehaviour
         if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer))
         {
             isGrounded = true;
+            
             jumpCount = 0;
             jumpCoolDown = Time.time + 0.2f;
+            
         }
         else if (Time.time < jumpCoolDown)
         {
