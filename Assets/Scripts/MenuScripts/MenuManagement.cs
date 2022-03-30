@@ -21,7 +21,7 @@ public class MenuManagement : MonoBehaviour
     // Metodo que envia al link del foro de la PWA
     public void BotonForo()
     {
-        Application.OpenURL("https://www.youtube.com/watch?v=OOtTeOV1zNg");
+        Application.OpenURL("https://axolot-teamaztek.000webhostapp.com/");
         Debug.Log("Entro al metodo..");
     }
 }
