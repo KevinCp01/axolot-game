@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MenuManagement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Metodo que carga la escena del videojuego
     public void BotonStart()
     {
         SceneManager.LoadScene("ExampleScene");
     }
 
-    // Update is called once per frame
+    // Metodo que cierra el videojuego
     public void BotonQuit()
     {
         Debug.Log("Cerrando Juego....");
         Application.Quit();
     }
+
+    // Metodo que envia al link del foro de la PWA
     public void BotonForo()
     {
         Application.OpenURL("https://www.youtube.com/watch?v=OOtTeOV1zNg");
